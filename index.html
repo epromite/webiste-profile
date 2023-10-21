@@ -8,6 +8,48 @@
     <!-- CSS Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+<!-- JavaScript dan Popper.js Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!-- JavaScript dan Popper.js Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Kode JavaScript yang Anda tambahkan -->
+<script>
+$(document).ready(function() {
+    // Semua konten kategori di awal disembunyikan kecuali yang pertama
+    $(".category-content").hide();
+    $("#post-content").show();
+
+    $(".category-item").click(function(event) {
+        event.preventDefault();
+        var targetCategory = $(this).data('category');
+
+        // Semua konten kategori disembunyikan
+        $(".category-content").hide();
+
+        // Tampilkan konten yang sesuai dengan kategori yang dipilih
+        $("#" + targetCategory + "-content").show();
+
+        // Hapus kelas "active" dari semua kategori
+        $(".category-item").removeClass("active");
+
+        // Tambahkan kelas "active" pada kategori yang dipilih
+        $(this).addClass("active");
+    });
+});
+
+</script>
+
+<!-- Tambahkan kode berikut di dalam elemen <body> sebelum <section class="profile-section"> -->
+
+
 </head>
 <body>
     <section class="profile-section">
@@ -35,8 +77,7 @@
 
         <!-- Nama dengan Verified Icon -->
         <h1 class="profile-name">
-            Epromite
-            <span class="verified-icon" data-feather="check-circle"></span>
+    Epromite
         </h1>
 
         <!-- Bio/Deskripsi -->
@@ -60,27 +101,83 @@
         <!-- Garis Pembatas -->
         <hr style="margin: 20px 0; border-color: #ccc;">
 
-        <!-- Postingan Foto (seperti di Instagram) -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="photo-post">
-                        <img src="img/post/post1.jpg" alt="Foto 1" data-caption="Caption untuk Foto 1" class="post-img">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="photo-post">
-                        <img src="img/post/post1.jpg" alt="Foto 2" data-caption="Caption untuk Foto 2" class="post-img">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="photo-post">
-                        <img src="img/post/post1.jpg" alt="Foto 3" data-caption="Caption untuk Foto 3" class="post-img">
-                    </div>
-                </div>
-                <!-- Tambahkan kolom lainnya sesuai dengan jumlah gambar posting -->
+
+<!-- Kategori (seperti di Instagram) -->
+<div class="profile-categories">
+    <a href="#" class="category-item active" data-category="post">
+        <i data-feather="grid"></i>
+        Post
+    </a>
+    <a href="#" class="category-item" data-category="reels">
+        <i data-feather="film"></i>
+        Reels
+    </a>
+<a href="#" class="category-item" data-category="project">
+    <i data-feather="briefcase"></i>
+    Project
+    <span class="coming-soon">Soon</span>
+</a>
+
+</div>
+
+
+
+<!-- Postingan Foto (seperti di Instagram) -->
+<div class="container category-content" id="post-content">
+<div class="container" id="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="photo-post">
+                <img src="img/post/post1.jpg" alt="Foto 1" data-caption="Caption untuk Foto 1" class="post-img">
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="photo-post">
+                <img src="img/post/post1.jpg" alt="Foto 2" data-caption="Caption untuk Foto 2" class="post-img">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="photo-post">
+                <img src="img/post/post1.jpg" alt="Foto 3" data-caption="Caption untuk Foto 3" class="post-img">
+            </div>
+        </div>
+        <!-- Tambahkan kolom lainnya sesuai dengan jumlah gambar posting -->
+    </div>
+</div>
+</div>
+
+<!-- Postingan Reels -->
+<div class="container category-content" id="reels-content">
+<div class="container" id="reels">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="reel-post">
+                <iframe src="https://www.youtube.com/embed/R99U-Csfst0" frameborder="0" allowfullscreen class="reel-video"></iframe>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="reel-post">
+                <iframe src="https://www.youtube.com/embed/R99U-Csfst0" frameborder="0" allowfullscreen class="reel-video"></iframe>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="reel-post">
+                <iframe src="https://www.youtube.com/embed/R99U-Csfst0" frameborder="0" allowfullscreen class="reel-video"></iframe>
+            </div>
+        </div>
+        <!-- Tambahkan kolom lainnya sesuai dengan jumlah postingan reels -->
+    </div>
+</div>
+
+</div>
+
+<!-- Postingan Project -->
+<div class="container category-content" id="project-content">
+<div class="container" id="project">
+    <div class="row">
+    </div>
+</div>
+</div>
 
         <!-- Copyright -->
         <div class="copyright">
@@ -109,30 +206,25 @@
         feather.replace();
     </script>
 
-    <!-- CSS Kustom untuk Ikon Verified -->
-    <style>
-        .verified-icon {
-            margin-left: 5px; /* Menambahkan jarak antara teks nama dan ikon Verified */
-            background-color: #1da1f2;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 50%;
-            transform: translate(50%, 50%);
-            animation: bounce 1s infinite;
-        }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-15px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
+<script>
+$(document).ready(function() {
+    // Semua konten kategori di awal disembunyikan kecuali yang pertama
+    $(".category-content").hide();
+    $("#post-content").show();
+
+    $(".category-item").click(function(event) {
+        event.preventDefault();
+        var targetCategory = $(this).data('category');
+
+        // Semua konten kategori disembunyikan
+        $(".category-content").hide();
+
+        // Tampilkan konten yang sesuai dengan kategori yang dipilih
+        $("#" + targetCategory + "-content").show();
+    });
+});
+</script>
 
     <script>
         $(document).ready(function() {
@@ -145,5 +237,14 @@
             });
         });
     </script>
+
+
+
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace();
+</script>
+
+<script src="scripts.js"></script>
 </body>
 </html>
