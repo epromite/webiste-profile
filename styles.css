@@ -68,6 +68,32 @@
     color: #333;
 }
 
+/* Tambahkan kode berikut ke dalam CSS Anda */
+/* Menu Settings */
+.settings-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+}
+
+.theme-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* Styles untuk tombol tema aktif */
+.theme-button.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+
 /* Ikon media sosial di dalam item */
 .social-item i {
     margin-right: 5px;
@@ -109,3 +135,96 @@
 #photoModal img {
     margin-bottom: 10px;
 }
+
+/* Kategori Profil */
+.profile-categories {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px 20px;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.category-item i {
+    margin-bottom: 5px;
+}
+
+.category-item:hover {
+    color: #333;
+}
+
+.category-item.active {
+    border-bottom: 2px solid #333;
+    color: #333;
+}
+
+/* Video */
+video {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Project */
+.project-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.project-card img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+.coming-soon {
+    display: inline-block;
+    font-size: 14px;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-left: 5px;
+    animation: pulse 1s infinite;
+    transform-origin: center;
+}
+
+@keyframes pulse {
+    0% {    
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+/* CSS untuk garis pembatas di bagian copyright */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    color: #777;
+}
+
+
+}
+
+
