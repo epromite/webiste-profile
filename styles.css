@@ -1,4 +1,11 @@
 /* styles.css */
+/* CSS untuk konten utama */
+.main-content {
+    max-width: 1200px; /* Anda bisa mengatur sesuai kebutuhan */
+    margin: 0 auto; /* Margin otomatis di sisi kiri dan kanan */
+    padding-left: 20px; /* Tambahkan jarak kiri */
+    padding-right: 20px; /* Tambahkan jarak kanan */
+}
 
 /* Konten terpusat di tengah */
 .profile-section {
@@ -13,6 +20,8 @@
     width: 100%;
     max-height: 300px;
     object-fit: cover;
+    border-left: 1px solid #ccc; /* Pembatas di sisi kiri */
+    border-right: 1px solid #ccc; /* Pembatas di sisi kanan */
 }
 
 /* Gambar profil */
@@ -20,7 +29,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-top: -75px;
+    margin-top: -125px; /* Disesuaikan dengan perubahan pada background-profile */
     border: 4px solid white;
 }
 
@@ -45,8 +54,16 @@
 }
 
 /* Tautan media sosial */
-.social-media-links a {
-    margin: 0;
+/* Tautan media sosial */
+.social-media-links {
+    width: 80%; /* Anda dapat menyesuaikan lebar ini sesuai kebutuhan */
+    margin: 0 auto; /* Menengahkan elemen secara horizontal */
+    display: flex;
+    flex-direction: row; /* Mengubah arah flex menjadi horisontal */
+    flex-wrap: wrap; /* Mengizinkan item untuk beralih ke baris baru jika tidak ada cukup ruang */
+    align-items: center; 
+    justify-content: center;
+    gap: 10px; 
 }
 
 /* Ikon media sosial */
@@ -66,6 +83,7 @@
     transition: transform 0.2s, background-color 0.2s;
     text-decoration: none;
     color: #333;
+    text-align: center; /* Menengahkan teks di dalam elemen */
 }
 
 /* Tambahkan kode berikut ke dalam CSS Anda */
@@ -223,8 +241,113 @@ video {
     padding-top: 10px;
     color: #777;
 }
+@media (min-width: 1024px) {
+/* Mengatur ukuran ikon hamburger pada tombol menu */
+#menuBtn svg {
+    fill: #fff;
+    width: 24px; /* Ganti dengan ukuran yang Anda inginkan */
+    height: 24px; /* Ganti dengan ukuran yang Anda inginkan */
+}
 
-
+/* Mengatur ukuran ikon tema pada tombol ganti tema */
+#themeIcon {
+    font-size: 24px; /* Ganti dengan ukuran yang Anda inginkan */
 }
 
 
+/* CSS untuk top bar menu */
+nav.bg-black {
+    padding-left: 20px; /* Tambahkan jarak kiri */
+    padding-right: 20px; /* Tambahkan jarak kanan */
+}
+/* CSS untuk tombol ganti tema */
+.theme-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ikon font-awesome */
+.theme-button i {
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Animasi ikon saat tema berubah */
+body.dark-theme #themeIcon {
+    transform: rotate(180deg);
+}
+
+
+}
+/* Menyesuaikan top bar menu dengan konten lainnya */
+.sticky-top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #000; /* Warna latar belakang sesuai kebutuhan */
+}
+
+/* Membuat logo dan tombol hamburger terletak di tengah top bar menu */
+#menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Membuat tombol hamburger berwarna putih */
+#menuBtn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Mengubah warna ikon hamburger menjadi putih */
+#menuBtn svg {
+    fill: #fff;
+}
+
+/* Mengatur jarak antara logo dan teks menu (Anda dapat menyesuaikannya) */
+#menu {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Sesuaikan dengan kebutuhan */
+}
+
+/* Menambahkan warna putih pada teks menu (Anda dapat menyesuaikan warnanya) */
+#menu a {
+    color: #fff;
+}
+
+/* Konten Reels */
+#reels-content {
+    width: 100%;
+    max-width: 1200px; /* Anda bisa mengatur ini sesuai dengan lebar konten utama Anda */
+    margin: 0 auto; /* Margin otomatis di sisi kiri dan kanan */
+    padding-left: 20px; /* Tambahkan jarak kiri */
+    padding-right: 20px; /* Tambahkan jarak kanan */
+}
+
+/* Bingkai untuk video Reels */
+.reel-post {
+    position: relative;
+     margin-bottom: 20px; /* Anda bisa menyesuaikan ukuran margin ini sesuai kebutuhan */
+    padding-bottom: 56.25%; /* Rasio 16:9 */
+    overflow: hidden;
+}
+
+/* Video dalam Reels */
+.reel-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
