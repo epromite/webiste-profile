@@ -7,13 +7,10 @@
 
     <!-- CSS Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-<!-- JavaScript dan Popper.js Bootstrap -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/feather-icons/dist/feather.min.css">
 
 <!-- JavaScript dan Popper.js Bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -51,12 +48,43 @@ $(document).ready(function() {
 
 
 </head>
+
+
+
+
 <body>
-    <section class="profile-section">
-        <!-- Background Profile -->
-        <div class="background-profile">
-            <img src="img/banner.jpg" alt="Background Profil">
+    
+
+<nav class="bg-black p-4 sticky-top-bar">
+    <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+<div id="menu" class="flex items-center"> <!-- Tambahkan ini -->
+    <img src="img/icon/icon.png" alt="Logo" class="w-8 h-8 mr-2">
+    <a href="#" class="text-white text-xl font-bold hidden lg:inline-block"></a>
+</div>
+            <!-- Menu dropdown untuk layar kecil yang akan diaktifkan oleh ikon hamburger -->
+            <div id="dropdownMenu" class="absolute top-16 right-4 bg-black border border-gray-700 rounded-md shadow-lg hidden">
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700">Beranda</a>
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700">Tentang</a>
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700">Layanan</a>
+                <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700">Kontak</a>
+            </div>
+
+
+
+
+
         </div>
+    </div>
+</nav>
+
+    <section class="profile-section">
+
+        <!-- Background Profile -->
+<div class="background-profile container mx-auto">
+    <img src="img/banner.jpg" alt="Background Profil">
+</div>
+
 
         <!-- Modal Pop-up untuk Profil Gambar -->
         <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -165,6 +193,7 @@ $(document).ready(function() {
                 <iframe src="https://www.youtube.com/embed/R99U-Csfst0" frameborder="0" allowfullscreen class="reel-video"></iframe>
             </div>
         </div>
+
         <!-- Tambahkan kolom lainnya sesuai dengan jumlah postingan reels -->
     </div>
 </div>
@@ -208,6 +237,24 @@ $(document).ready(function() {
 
 
 <script>
+// Fungsi untuk mengaktifkan atau menonaktifkan tema gelap
+function toggleDarkTheme() {
+    document.body.classList.toggle('dark-theme');
+    // Ubah ikon sesuai dengan tema yang aktif
+    const themeIcon = document.getElementById('themeIcon');
+    if (document.body.classList.contains('dark-theme')) {
+        themeIcon.style.transform = 'rotate(180deg)';
+    } else {
+        themeIcon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Event listener untuk tombol tema
+document.getElementById('themeToggleBtn').addEventListener('click', toggleDarkTheme);
+
+</script>>
+
+<script>
 $(document).ready(function() {
     // Semua konten kategori di awal disembunyikan kecuali yang pertama
     $(".category-content").hide();
@@ -238,7 +285,46 @@ $(document).ready(function() {
         });
     </script>
 
+<script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+    var dropdown = document.getElementById('dropdownMenu');
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+});
 
+</script>>
+
+<script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+    var dropdown = document.getElementById('dropdownMenu');
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+
+</script>>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "flex";
+    } else {
+        menu.style.display = "none";
+    }
+});
+</script>
+
+
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace();
+</script>
 
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
